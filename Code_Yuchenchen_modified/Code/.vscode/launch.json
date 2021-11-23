@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch TreeMapApp",
+            "request": "launch",
+            "mainClass": "ca.umontreal.maps.TreeMapApp",
+            "projectName": "Code_eb7a3320"
+        }
+    ]
+}
