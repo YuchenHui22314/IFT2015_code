@@ -187,6 +187,9 @@ public class TreeMap<K,V> extends AbstractSortedMap<K,V> {
 	    Position<Entry<K,V>> leaf = ( isExternal( left( p ) ) ? left( p ) : right( p ) );
 	    Position<Entry<K,V>> sib = sibling( leaf );
 	    remove( leaf ); // LinkedBinaryTree.remove( p )
+		//删除leaf的目的是把leaf位置的sentinel变成null，方便调用LBT的remove方法。
+		//因为在linkedbinarytree中没有sentinel，对于谁被promoted全由sibling是否
+		//为null决定。这样把leaf搞成null，sibling自然就晋级了。
 	    remove( p ); // LinkedBinaryTree.remove( p ) => sib is promoted in p's place
 	    rebalanceDelete( sib ); // hook for balanced tree subclasses
 	    return old;
