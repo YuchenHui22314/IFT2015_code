@@ -36,6 +36,7 @@ public class TreeMap<K,V> extends AbstractSortedMap<K,V> {
 	    public int getAux() { return aux; }
 	    public void setAux( int value ) { aux = value; }
 	}
+	//----- end of inner class BSTNode -----
 
 	// positional-based methods related to aux field
 	public int getAux( Position<Entry<K,V>> p ) {
@@ -44,12 +45,9 @@ public class TreeMap<K,V> extends AbstractSortedMap<K,V> {
 	public void setAux( Position<Entry<K,V>> p, int value ) {
 	    ( ( BSTNode<Entry<K,V>> ) p ).setAux( value );
 	}
-	//----- end of inner class BSTNode -----
 
 	// override createNode to produce BSTNode (rather than LinkedBinaryTree.Node)
-	// override 的对象是linkedBinaryTree，因为lBT里面有createNode方法。这有些奇怪。等下次课用到
-	// 这个方法时应重点关注。
-	//草。明白了,dan mei wan quan ming bai!
+	// override 的对象是linkedBinaryTree，因为lBT里面有createNode方法。这有些奇怪
 	@Override
 	protected Node<Entry<K,V>> createNode( Entry<K,V> e, Node<Entry<K,V>> parent,
 					       Node<Entry<K,V>> left, Node<Entry<K,V>> right ) {
@@ -297,8 +295,6 @@ public class TreeMap<K,V> extends AbstractSortedMap<K,V> {
 		}
 	    }
 	}
-    }
-
     // rebalance methods which do nothing, and will be overriden by subclass AVLtrees....etc.
     protected void rebalanceInsert( Position<Entry<K,V>> p ) {}
     protected void rebalanceDelete( Position<Entry<K,V>> p ) {}

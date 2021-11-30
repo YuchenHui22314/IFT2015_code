@@ -3,8 +3,7 @@ package ca.umontreal.pqueues;
 import java.util.Comparator;
 import java.lang.ClassCastException;
 import java.lang.IllegalArgumentException;
-import java.util.ArrayList;
-
+import ca.umontreal.adt.list.ArrayList;
 /**
 * HeapPriorityQueue is an implementation of the ADT Priority Queue
 *    using a heap implemented in an ArrayList
@@ -112,66 +111,3 @@ public class HeapPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
     }
 
 }
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

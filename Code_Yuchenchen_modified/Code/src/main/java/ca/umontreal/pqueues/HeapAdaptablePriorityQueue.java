@@ -3,7 +3,7 @@ package ca.umontreal.pqueues;
 import java.util.Comparator;
 import java.lang.ClassCastException;
 import java.lang.IllegalArgumentException;
-import java.util.ArrayList;
+
 
 /**
 * HeapAdaptablePriorityQueue is an implementation of the ADT Priority Queue
@@ -66,6 +66,7 @@ public class HeapAdaptablePriorityQueue<K,V> extends HeapPriorityQueue<K,V> impl
     // interface methods
 
     // insert a (key, value) entry and return it
+	@Override
     public Entry<K,V> insert( K k, V v ) throws IllegalArgumentException {
 	this.checkKey( k ); // might throw exception
 	Entry<K,V> newest = new AdaptablePQEntry<>( k, v, this.heap.size() );
@@ -75,6 +76,7 @@ public class HeapAdaptablePriorityQueue<K,V> extends HeapPriorityQueue<K,V> impl
     }
 
     // remove a given entry
+	
     public void remove( Entry<K,V> entry ) throws IllegalArgumentException {
 	AdaptablePQEntry<K,V> locator = validate( entry );
 	int j = locator.getIndex();
