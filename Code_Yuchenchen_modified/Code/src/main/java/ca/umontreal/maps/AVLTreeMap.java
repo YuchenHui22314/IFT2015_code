@@ -91,6 +91,7 @@ public class AVLTreeMap<K,V> extends TreeMap<K,V> {
     // overrides the TreeMap rebalancing hook
     protected void rebalanceInsert( Position<Entry<K,V>> p ) { rebalance( p ); }
     protected void rebalanceDelete( Position<Entry<K,V>> p ) {
+	// 这里的p，是将node删除后被promote的子node的位置。
 	if( !isRoot( p ) )
 	    rebalance( parent( p ) );
     }

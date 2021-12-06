@@ -156,7 +156,7 @@ public class SinglyLinkedList<E> implements List<E> {
     }
     public E remove( int index ) throws IndexOutOfBoundsException { // remove element at index, error if out of bounds
 	checkIndex( index, this.size );
-	if( index == 0 ) this.removeFirst(); // special case
+	if( index == 0 ) return this.removeFirst(); // special case
 	Node<E> current = this.getHead();
 	Node<E> previous = null; // need the previous to link Nodes around Node at index
 	for( int k = 0; k < index; k++ ) {

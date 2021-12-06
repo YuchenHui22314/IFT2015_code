@@ -289,12 +289,13 @@ public class TreeMap<K,V> extends AbstractSortedMap<K,V> {
 		subMapRecurse( fromKey, toKey, right( p ), buffer );
 	    else {
 		subMapRecurse( fromKey, toKey, left( p ), buffer ); // first consider left subtree
-		if( compare( p.getElement(), toKey ) < 0 ) { // p is within range
-		    buffer.add( p.getElement() ); // add it to buffer, and consider right subtree
-		    subMapRecurse( fromKey, toKey, right( p ), buffer );
-		}
+			if( compare( p.getElement(), toKey ) < 0 ) { // p is within range
+				buffer.add( p.getElement() ); // add it to buffer, and consider right subtree
+				subMapRecurse( fromKey, toKey, right( p ), buffer );
+		    }
 	    }
 	}
+    }
     // rebalance methods which do nothing, and will be overriden by subclass AVLtrees....etc.
     protected void rebalanceInsert( Position<Entry<K,V>> p ) {}
     protected void rebalanceDelete( Position<Entry<K,V>> p ) {}
